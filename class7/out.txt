@@ -1,0 +1,3 @@
+enter sze of array
+enter value of index0
+value of index0is1
