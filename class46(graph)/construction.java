@@ -81,6 +81,7 @@ public class construction {
                 System.out.print("["+ed.v+", w-"+ed.w+" ] ;");
             }
             System.out.println();
+
         }
     }
 
