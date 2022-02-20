@@ -31,7 +31,7 @@ public class construction {
         int vertices = 7;
         make(edges,vertices);
 
-        displayGraph();
+        // displayGraph();
         
         System.out.println("---------------------------");
         removeEdge(1,2);
@@ -41,11 +41,15 @@ public class construction {
     }
 
     static void removeEdge(int u,int v){
-        int ct = -1;
         for(int i=0;i<graph.get(u).size();i++){
-            ct++;
             if(graph.get(u).get(i).v==v){
-                graph.get(u).remove(ct);
+                graph.get(u).remove(i);
+                break;
+            }
+        }
+        for(int i=0;i<graph.get(v).size();i++){
+            if(graph.get(v).get(i).v==u){
+                graph.get(v).remove(i);
                 break;
             }
         }
@@ -63,7 +67,6 @@ public class construction {
             addEdge(arr[0],arr[1],arr[2]);
         }
 
-        // displayGraph();
     }
 
     static void addEdge(int u,int v,int w){
