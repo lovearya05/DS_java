@@ -20,9 +20,9 @@ public class construction {
         int[][] edges={
             {0,1,6},
             {0,3,5},
-            // {1,2,2},
+            {1,2,2},
             {3,2,0},
-            // {2,4,3},
+            {2,4,3},
             {4,5,6},
             {4,6,2},
             {5,6,3}
@@ -48,20 +48,24 @@ public class construction {
         // displayGraph();
 
         boolean[] visited = new boolean[graph.size()];
+        boolean[] visit = new boolean[graph.size()];
+
+        // depth first search to trvarse A graph
         // dfs(0,visited,"0==>");
+
+        ///DFS from starting vertex to destination vertex
         // dfsSvToDv(0,5,visited,"0==>");
 
-        // System.out.println(findCycle(0, -1, visited));
+        //checking is there any cycle in the graph
+        // System.out.println(findCycle(0, -1,visit, visited));
 
         //cycle in disconnected Graph
-
         // for(ArrayList ed:graph){
             //graph.get i all nodes ke liye call lagayege
             // ager boolen wale me not visited hai to 
         // }
 
-        boolean[] visit = new boolean[graph.size()];
-        cycleInDisconnected(visit, visited);
+        // cycleInDisconnected(visit, visited);
 
     }
 
@@ -91,11 +95,9 @@ public class construction {
                 flag=flag || findCycle(ed.v,cv,visit,visited);
             }
         }
-
         visited[cv]=false;
 
         return flag;
-
     }
 
     static void dfs(int cv,boolean[] visited,String psf){
