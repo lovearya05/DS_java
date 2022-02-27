@@ -1,77 +1,57 @@
-import java.util.ArrayList;
-
 public class temp{
-    
-    static class edge{
-        int v;
-        int w;
+	public static void main(String[] args) {
+		int[] arr={6,8,3,9,2,7,1,0};
 
-        edge(int v,int w){
-            this.v=v;
-            this.w=w;
-        }
+		int[] ans = mergeSort(arr,0,arr.length-1);
 
-        edge(){}
-    }
+		for(int i:ans){
+			System.out.print(i+",");
+		}
+	}
 
-    static ArrayList<ArrayList<edge>> graph;
+	static int[] mergeSort(int[] arr,int st,int ed){
 
-    public static void main(String[] args) {
-        int[][] edges={
-            {0,1,6},
-            {0,3,5},
-            {1,2,2},
-            {3,2,0},
-            {2,4,3},
-            {4,5,6},
-            {4,6,2},
-            {5,6,3}
-        };
+		if(st==ed){
+			int[] a1 = new int[1];
+			a1[0] = arr[st];
+			return a1;
+		}
 
-        int vertices = 7;
-        make(edges,vertices);
-        // displayGraph();
-        
-        removeEdge(1,2);
-        
-        displayGraph();
-    }
+		int mid = (st+ed)/2;
 
-    static void removeEdge(int u,int v){
-        // int ct = -1;
-        for(int i=0;i<graph.size();i++){
-            if(graph.get(u).get(i).v==v){
-                graph.get(u).remove(i);
-                break;
-            }
-        }
-    }
+		int[] ans1 = mergeSort(arr, st, mid);
+		int[] ans2 = mergeSort(arr, mid+1,ed);
 
-    static void make(int[][] edges,int vertices){
-        graph = new ArrayList<>();
-        for(int i=0;i<vertices;i++){
-            graph.add(new ArrayList<edge>());
-        }
+		int[] ans = merge(ans1,ans2);
+		return ans;
+	}
 
-        for(int[] arr:edges){
-            addEdge(arr[0],arr[1],arr[2]);
-        }
-    }
+	static int[] merge(int[] ans1,int[] ans2){
+		int i=0;
+		int j=0;
+		int k=0;
+		int[] fans =new int[ans1.length + ans2.length];
+		
+		while(i<ans1.length && j<ans2.length){
+			if(ans1[i]<ans2[j]){
+				fans[k] = ans1[i];
+				i++;
+				k++;
+			}else{
+				fans[k++] = ans2[j++];
+			}
+			
+		}
 
-    static void addEdge(int u,int v,int w){
-        graph.get(u).add(new edge(v,w));
-        graph.get(v).add(new edge(u,w));
-    }
+		while(i<ans1.length){
+			fans[k++] = ans1[i++];
+		}
+		while(j<ans2.length){
+			fans[k++] = ans2[j++];
+		}
 
-    static void displayGraph(){
-        
-        for(int i=0;i<graph.size();i++){
-            System.out.print(i+"==>");
+		return fans;
 
-            for(edge ed:graph.get(i)){
-                System.out.print("["+ed.v+", w-"+ed.w+" ] ;");
-            }
-            System.out.println();            
-        }
-    }
+	}
+
 }
