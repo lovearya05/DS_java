@@ -1,5 +1,7 @@
 import java.util.ArrayList;
 
+// class 46,47,48
+
 public class construction {
 
     static class edge{
@@ -25,7 +27,8 @@ public class construction {
             {2,4,3},
             {4,5,6},
             {4,6,2},
-            {5,6,3}
+            {5,6,3},
+            // {1,5,3}
         };
 
         int vertices = 7;
@@ -60,27 +63,119 @@ public class construction {
         // System.out.println(findCycle(0, -1,visit, visited));
 
         //cycle in disconnected Graph
-        // for(ArrayList ed:graph){
             //graph.get i all nodes ke liye call lagayege
             // ager boolen wale me not visited hai to 
-        // }
 
-        // cycleInDisconnected(visit, visited);
+        cycleInDisconnected(visited);
+
+        // hamitoniumPath(5,1,visited,"5");
+        
+        // (starting , source, count, visited, ans)
+        // hamitoniumCycle(1,1, 1, visited, "1");
+
+        // masterGcc();
 
     }
+    static void masterGcc(){
 
-    static void cycleInDisconnected(boolean[] visit,boolean[] visited){
+        boolean[] visited = new boolean[graph.size()];
+
+        ArrayList<ArrayList<Integer>> result = new ArrayList<>();
+        
+        int count=0;
         for(int i=0;i<graph.size();i++){
-            if(!visit[i]){
-                System.out.println(findCycle(i, -1 ,visit, visited));
+            if(!visited[i]){
+                count++;
+                ArrayList<Integer> ans = gcc(i, visited);
+                result.add(ans);
+                System.out.println(count);
             }
         }
+
+        System.out.println(result);
+
     }
 
-    static boolean findCycle(int cv,int pv,boolean[] visit, boolean[] visited){
+    static ArrayList<Integer> gcc(int sc,boolean[] visited){
+        
+        
+        visited[sc] = true;
+
+        ArrayList<Integer> ans =new ArrayList<>();
+        ans.add(sc);
+
+        for(edge nbr:graph.get(sc)){
+            if(!visited[nbr.v]){
+                ArrayList<Integer> res = gcc(nbr.v, visited);
+                ans.addAll(res);
+            }
+        }
+
+        return ans;
+
+    }
+
+    static void hamitoniumCycle(int st,int sc,int count,boolean[] visited,String ans){
+        if(count==graph.size()){
+
+            ArrayList<edge> ed = graph.get(sc);
+
+            for(edge i:ed){
+
+                if(i.v==st){
+                    System.out.println(ans+"*");
+                    return;
+                }
+            }
+            System.out.println(ans);
+            return;
+        }
+
+        visited[sc] = true;
+
+        ArrayList<edge> ed = graph.get(sc);
+        for(edge i:ed){
+            if(!visited[i.v]){
+                hamitoniumCycle(st,i.v, count+1, visited, ans+"==>"+i.v);
+            }
+            
+        }
+        visited[sc]=false;
+    }
+    static void hamitoniumPath(int sc,int count,boolean[] visited,String ans){
+        if(count==graph.size()){
+            System.out.println(ans);
+            return;
+        }
+
+        visited[sc] = true;
+
+        ArrayList<edge> ed = graph.get(sc);
+        for(edge i:ed){
+            if(!visited[i.v]){
+                hamitoniumPath(i.v, count+1, visited, ans+"==>"+i.v);
+            }
+            
+        }
+        visited[sc]=false;
+    }
+
+    static void cycleInDisconnected(boolean[] visited){
+        boolean flag = false;
+        for(int i=0;i<graph.size();i++){
+            if(!visited[i] && !flag){
+                
+                flag = findCycle(i, -1 , visited);
+            }
+
+        }
+        System.out.println(flag);
+    }
+
+    static boolean findCycle(int cv,int pv, boolean[] visited){
 
         visited[cv]=true;
-        visit[cv] = true;
+        // visit[cv] = true;
 
         boolean flag=false;
 
@@ -92,10 +187,10 @@ public class construction {
 
             if(!visited[ed.v]){
                 // System.out.println(flag=flag);
-                flag=flag || findCycle(ed.v,cv,visit,visited);
+                flag=flag || findCycle(ed.v,cv,visited);
             }
         }
-        visited[cv]=false;
+        // visited[cv]=false;
 
         return flag;
     }
