@@ -41,6 +41,7 @@ public class construction {
     }
 
     static void ques(){
+        
         // displayGraph();
         
         // System.out.println("---------------------------");
