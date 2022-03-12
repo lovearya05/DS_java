@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-// class 46,47,48
+// class 46,47,48,49,50
 
 public class construction {
 
@@ -66,7 +66,7 @@ public class construction {
             //graph.get i all nodes ke liye call lagayege
             // ager boolen wale me not visited hai to 
 
-        cycleInDisconnected(visited);
+        // cycleInDisconnected(visited);
 
         // hamitoniumPath(5,1,visited,"5");
         
@@ -75,7 +75,49 @@ public class construction {
 
         // masterGcc();
 
+        bfs(1);
+
     }
+
+    static void bfs(int srv){
+
+        boolean[] visited = new boolean[graph.size()];
+
+        ArrayList<Integer> q=new ArrayList<>();
+        q.add(srv);
+        int lev = 0;
+
+        while(q.size()!=0){
+
+            int sz=q.size();
+            System.out.print(lev+"==>");
+
+            while(sz--!=0){
+
+                int rm = q.remove(0);
+    
+                if(visited[rm]){
+                    // System.out.print("cycle....");
+                    continue;
+                }
+    
+                visited[rm] = true;
+    
+                System.out.print(rm+" ");
+    
+                for(edge nbr : graph.get(rm)){
+                    if(!visited[nbr.v]){
+                        q.add(nbr.v);
+                    }
+                }
+            }
+
+            System.out.println();
+            lev++;
+
+        }
+    }
+
     static void masterGcc(){
 
         boolean[] visited = new boolean[graph.size()];
