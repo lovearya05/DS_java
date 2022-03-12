@@ -1,57 +1,84 @@
-public class temp{
-	public static void main(String[] args) {
-		int[] arr={6,8,3,9,2,7,1,0};
+import java.util.*;
+class temp{
 
-		int[] ans = mergeSort(arr,0,arr.length-1);
+class MinHeap{
+	int[] harr; 
+	int capacity; 
+	int heap_size; 
 
-		for(int i:ans){
-			System.out.print(i+",");
-		}
-	}
-
-	static int[] mergeSort(int[] arr,int st,int ed){
-
-		if(st==ed){
-			int[] a1 = new int[1];
-			a1[0] = arr[st];
-			return a1;
-		}
-
-		int mid = (st+ed)/2;
-
-		int[] ans1 = mergeSort(arr, st, mid);
-		int[] ans2 = mergeSort(arr, mid+1,ed);
-
-		int[] ans = merge(ans1,ans2);
-		return ans;
-	}
-
-	static int[] merge(int[] ans1,int[] ans2){
-		int i=0;
-		int j=0;
-		int k=0;
-		int[] fans =new int[ans1.length + ans2.length];
+	int parent(int i) { return (i - 1) / 2; }
+	int left(int i) { return ((2 * i )+ 1); }
+	int right(int i) { return ((2 * i) + 2); }
+	
+	
+	MinHeap(int a[], int size){
+		heap_size = size;
+		harr = a; 
+		int i = (heap_size - 1) / 2;
 		
-		while(i<ans1.length && j<ans2.length){
-			if(ans1[i]<ans2[j]){
-				fans[k] = ans1[i];
-				i++;
-				k++;
-			}else{
-				fans[k++] = ans2[j++];
-			}
-			
+		while (i >= 0){
+			minHeapify(i);
+			i--;
 		}
-
-		while(i<ans1.length){
-			fans[k++] = ans1[i++];
+	}
+	
+	void replaceMax(int x){
+		this.harr[0] = x;
+		minHeapify(0);
+	}
+	
+	int getMin() { return harr[0]; }
+	
+	void minHeapify(int i){
+		int l = left(i);
+		int r = right(i);
+		int smallest = i;
+		if (l < heap_size && harr[l] < harr[i])
+			smallest = l;
+		if (r < heap_size && harr[r] < harr[smallest])
+			smallest = r;
+		if (smallest != i)
+		{
+			int t = harr[i];
+			harr[i] = harr[smallest];
+			harr[smallest] = t;
+			minHeapify(smallest);
 		}
-		while(j<ans2.length){
-			fans[k++] = ans2[j++];
-		}
-
-		return fans;
-
 	}
 
+	int extractMin(){
+		if (heap_size == 0)
+			return Integer.MAX_VALUE;
+
+		int root = harr[0];
+
+		if (heap_size > 1){
+			harr[0] = harr[heap_size - 1];
+			minHeapify(0);
+		}
+		heap_size--;
+		return root;
+	}
+
+};
+
+int kthSmallest(int arr[], int n, int k)
+{
+
+	MinHeap mh = new MinHeap(arr, n);
+
+	for (int i = 0; i < k - 1; i++){
+		mh.extractMin();
+	}
+ 
+	return mh.getMin();
+}
+
+	public static void main(String[] args){
+
+			int arr[] = { 1,4,7,3,2,8,6,7 };
+			int n = arr.length, k = 3;
+			temp gfg = new temp();
+			System.out.print("K'th smallest element is " + gfg.kthSmallest(arr, n, k));
+	}
 }
