@@ -11,7 +11,7 @@ public class quickSort {
         if(low>=high) return;
 
         int pi = partition(arr,low,high);
-        // System.out.println(pi);
+        System.out.println(pi);
         quickSort(arr, low, pi-1);
         quickSort(arr, pi+1, high);
     }
