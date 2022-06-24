@@ -173,12 +173,12 @@ public class linkList3{
         addFirst(20);
         addFirst(10);
         // find_Mid(head);
-        findIdxFromLast(head,2);
+        // findIdxFromLast(head,2);
         // reverse(head);
         // disp(reverse(head));
         // reverse2(head);
-        // reverseK(head,10);
-        // disp(head);
+        reverseK(head,3);
+        disp(head);
     }
 }
 

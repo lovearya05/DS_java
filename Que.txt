@@ -1,0 +1,210 @@
+no is odd or even 
+no is prime or note
+print n prime no 
+fibbonaci series'
+number length
+print digit of no(front)
+print digit from back of no
+reverse of a no
+inverse places
+lcm of no using gcd
+prime factor of a no
+bulb program (n=20 o/p=1,4,9,16)
+patterns
+
+*
+**
+***
+****
+
+* * * * *
+* * * *
+* * *
+* *
+*
+
+        *
+      * *
+    * * *
+
+
+
+    *
+  * *
+* * *
+  * *
+    *
+
+     *   
+   * * *
+ * * * * *
+   * * *
+     *
+
+
+1 
+1 2
+1 2 3
+1 2 3 4
+
+1
+2 3
+4 5 6
+7 8 9 10
+
+A
+A B
+.........
+
+A
+B C
+D E F
+
+*
+* *
+* * *
+* *
+*
+
+
+    1
+  1 2 3
+1 2 3 4 5
+  1 2 3
+    1
+
+
+
+    1
+  2 3 4
+3 4 5 6 7
+  4 5 6
+    5
+
+
+       1
+     2 3 4
+   3 4 5 6 7
+     2 3 4 
+       1
+
+...
+
+...
+
+...
+
+
+Function
+
+decimal to any base
+any base to decimal
+any base to any base
+
+
+Arrays
+
+print array element
+maximum no in array and bar
+
+reverse an array without other array
+dynamic array
+dublicate no in array
+inverse place in array
+rotation in array
+add two array one digit at one place
+kadan's algo max sum of subarray
+national dutch flag seperate 0's and 1's
+sagrigation 0&1
+sagrigation(0,1,2)
+subtracting two array
+moore voting algo
+container with water
+square sort
+
+
+2D array
+boat to save people
+memory in 2D array
+wave
+spiral(variations)
+Array multiplication
+array addition
+Array rotation
+Exit point
+
+
+Recursion
+basic rec
+factorial
+power of any no
+buffer input reader
+index of no in array from starting using rec
+index from back side using recursion 
+max no in array (pre-post oreder)
+no of occurence of no in array
+no of occurrence and its indexes
+print array element
+string and recursion
+tower of hanoi
+print substring(pre,post)
+search in 2D array
+Dialpad 
+stairpath
+stairpath with n steps
+maze path
+maze path multiple shift pre,post
+Rat/maze flood fill
+sub seq by post order in string
+sub string in string 2 way postorder
+stair path by post order
+dialpad by post order
+
+
+link list
+addfirst
+addlast
+add at
+size
+fid mid without using size'
+last 2nd element using 2 pointer
+get last
+index from last k using 2 ptr
+reverse
+find intersection
+reverse k
+find cycle
+merge 2 sorted LL
+Fold a LL
+unfold a LL
+
+
+
+Stack
+expression balance or not
+next greater
+find max area (arr)
+stock span
+max in k window
+infix evaluation & convert to pre,post
+prefix _ _ _ _ 
+postfix _ _ _ _
+
+Adapters
+
+implement que using stack
+implement stack using que
+stack using array (k-stack & chainig method)
+celebrity
+permutation queen problem
+combination in n queen
+N queen prooblem
+N knight problem
+pipe and que
+Target sum subset
+encoding
+crossword
+
+
+
+

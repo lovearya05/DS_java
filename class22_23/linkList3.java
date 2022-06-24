@@ -100,7 +100,6 @@ static void findIntersection(){
 
 
 }
-
 static void removeDublicacy(){
     if(head==null || head.next==null) return;
     Node temp=head.next;

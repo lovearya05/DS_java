@@ -59,7 +59,7 @@ public class stackUsingArray {
 
         protected LinkEntry() { element = null; next = null; }
     }
-}urn num_elements;
+}return num_elements;
 }
 
 

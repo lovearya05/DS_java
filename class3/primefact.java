@@ -1,7 +1,7 @@
 public class primefact{
 
     public static void main(String args[]){
-       int num=25;
+       int num=26;
        int i;
       
     for(i=2;i*i<=num;i++){

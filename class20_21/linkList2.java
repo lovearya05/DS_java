@@ -153,14 +153,14 @@ public class linkList2 {
         // removeLast(head);
         // removeLast(head);
         // removeAt(6);
-        removeFirst(head);
-        removeFirst(head);
-        removeFirst(head); 
+        // removeFirst(head);
+        // removeFirst(head);
+        // removeFirst(head); 
         // disp(head);
         // System.out.println(size(head));
         // System.out.println(findMid());
         // System.out.println();
-        // Node re = getAdd(head);
+        Node re = getAdd(head);
         // getfirst(re);
         // getLast(re);
         // getAt(5);
@@ -169,7 +169,7 @@ public class linkList2 {
         // removeAt(6);
         // removeFirst(re);
         // removeFirst(re); 
-        disp(head);
+        // disp(head);
         
     }
 }
