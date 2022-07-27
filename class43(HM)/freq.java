@@ -11,8 +11,8 @@ public class freq{
         // intersection();
 
         // int[] arr={15,3,14,2,13,5,8,7,1,12,16,9};
-        // findLarCon(arr);
-
+        
+        // findLargestConsicutiveNo(arr);
         noOfOccAndIntersection();
     }
 
@@ -64,7 +64,8 @@ public class freq{
         }
 
     }
-    static void findLarCon(int[] arr){
+    
+    static void findLargestConsicutiveNo(int[] arr){
         HashMap<Integer,Boolean> hm=new HashMap<>();
 
         //o(N)
@@ -79,7 +80,7 @@ public class freq{
             }
         }
 
-        int gsn=-1;
+        int gsn=-1; //global st no
         int gmlen=1;//global max length
 
         ArrayList<Integer> keys=new ArrayList<>(hm.keySet());

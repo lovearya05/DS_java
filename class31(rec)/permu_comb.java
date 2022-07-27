@@ -5,7 +5,7 @@ public class permu_comb{
         ques();
     
     }
-
+    
     static void ques(){
         int box=15;
         int q=4;

@@ -10,7 +10,7 @@ public class tripletWithSumK {
 
         //target = hv+a[i]+a[j]
         
-        for(int i=0;i<arr.length;i++){
+        for(int i=0;i<arr.length-1;i++){
             for(int j=i+1;j<arr.length;j++){
                 int hv= k-arr[i]-arr[j];
                 if(hm.containsKey(hv)){
@@ -22,3 +22,6 @@ public class tripletWithSumK {
         }
     }
 }
+
+
+

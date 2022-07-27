@@ -20,7 +20,21 @@ public class nStackUsingArray {
     }
 
     public static void main(String[] args) {
+        // push('a',1);
         push('a',1);
+        push('b',1);
+        push('c',3);
+        push('d',2);
+        push('e',3);
+        push('f',3);
+        push('g',1);
+        System.out.println(pop(1));
+        System.out.println(pop(2));
+        System.out.println(pop(2));
+        System.out.println(pop(2));
+        System.out.println(pop(2));
+        System.out.println(pop(2));
+        System.out.println(pop(2)); 
         System.out.println(pop(1));
     }
     

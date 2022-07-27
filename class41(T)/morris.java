@@ -14,9 +14,10 @@ public class morris {
         int[] arr={12,25,30,35,37,40,50,60,62,70,75,87};
         construct(arr, 0, arr.length-1);
         // display(root);
-        
+
         MoorisTraversal();
     }
+
     static void MoorisTraversal(){
 
 
@@ -40,7 +41,7 @@ public class morris {
 
                 if(temp.right==null){
                     temp.right=curr;
-                    System.out.print(curr.val+" ");//Pre order
+                    System.out.print(curr.val+" ");  //Pre order print
 
                     // if(){
 

@@ -55,7 +55,11 @@ public class Btree {
         // maxDiameter(root);
         // System.out.println(max);
 
-        ArrayList<TreeNode> rtn=rootToNode(root, 5                                                );
+        ArrayList<TreeNode> rtn=rootToNode(root,5);
+
+        // for(TreeNode nd:rtn){
+        //     System.out.println(nd.val);
+        // }
 
         int k=2;
         for(int i=rtn.size()-1;i>=0 && k>=0;i--){
@@ -63,8 +67,6 @@ public class Btree {
             printKdis(rtn.get(i),k,blocker);
             k--;
         }
-
-
     }
 
     static void printKdis(TreeNode root,int k, TreeNode blocker){

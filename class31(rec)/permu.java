@@ -5,16 +5,22 @@ public class permu {
         quen();
     }
     static void quen(){
-        int box=80;
-        int qu=9;
+        int box=15;
+        int qu=4;
         // boolean[] visited=new boolean[box];
         // int count=permutation(box,1,visited,"");
-        boolean[] visited=new boolean[box+1];
-        int count=nqueen(box,qu,1,0,visited,"");
-        System.out.println(count);
-                
-
         // System.out.println(count);
+
+        
+        // boolean[] visited=new boolean[box+1];
+        // int count=combination(box,qu,1,1,visited,"");
+        // System.out.println(count);
+        
+        
+        boolean[] visited=new boolean[box+1];
+        int count=nqueen(box,qu,1,1,visited,"");
+        System.out.println(count);
+
     }
     static int permutation(int box,int count,boolean[] visited,String asf){
         if(count>box){
@@ -26,7 +32,7 @@ public class permu {
         for(int i=1;i<=box;i++){
             if(visited[i-1]==false){
                 visited[i-1]=true;
-                tcount+=permutation(box, count+1, visited, asf+"B"+count+"Q"+i);
+                tcount+=permutation(box, count+1, visited, asf+"B"+count+"Q"+i+" ");
                 visited[i-1]=false;
             }
         }

@@ -29,8 +29,8 @@ public class HM_imple {
 
         private void init(int sz){
             bucket=new LinkedList[sz];
-            size=0;
-            k=2;
+            size=0;   //total no of keys
+            k=2;      //loading factor
             for(int i=0;i<bucket.length;i++){
                 bucket[i]=new LinkedList<>();
             }
@@ -124,6 +124,7 @@ public class HM_imple {
             return false;
 
         }
+
         public ArrayList<Integer> keyS(){
             ArrayList<Integer> arr = new ArrayList<Integer>();
 

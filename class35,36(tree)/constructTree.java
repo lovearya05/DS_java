@@ -27,9 +27,9 @@ public class constructTree {
         // System.out.println(size(root));
         // System.out.println(height(root));
         // System.out.println(max(root));
-        // ceilval=(int)1e9;
-        // ceil(root,86);
-        // System.out.println(ceilval);
+        ceilval=(int)1e9;
+        ceil(root,86);
+        System.out.println(ceilval);
         // floorval=(int)-1e9;
         // floor(root,86);
         // System.out.println(floorval);

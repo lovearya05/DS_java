@@ -16,7 +16,7 @@ public class pipe_que {
     }
 
     static void tour(int cr,int cc,int[][] ans,int count,int cnt){
-        System.out.println(count);
+        // System.out.println(count);
         // if(count==ans.length*ans[0].length){
         if(cnt==ans.length*ans[0].length){
         // if(count==60){
@@ -24,7 +24,7 @@ public class pipe_que {
 
             for(int i=0;i<ans.length;i++){
                 for(int j=0;j<ans[0].length;j++){
-                    System.out.print(ans[i][j]+"\t");
+                    System.out.print(ans[i][j]+"     ");
                 }
                 System.out.println("");
             }
@@ -38,7 +38,7 @@ public class pipe_que {
         int[][] pipe={{0,1},{-1,0},{0,-1},{1,0}};
 
         ans[cr][cc]=count;
-
+        
         for(int i=0;i<src.length;i++){
             int sr=cr+src[i][0];
             int sc=cc+src[i][1];
@@ -51,7 +51,7 @@ public class pipe_que {
             for(int j=0;j<pipe.length;j++){
                 int r=sr+pipe[j][0];
                 int c=sc+pipe[j][1];
-
+                
                 if(issafe(r,c,ans)){
                     tour(r, c, ans, count+1,cnt+1);
                 }

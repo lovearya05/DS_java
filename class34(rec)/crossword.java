@@ -58,7 +58,7 @@ public class crossword{
 
 
     }
-    // unplace the wholw word on vertically and horizontally
+    // unplace the whole word on vertically and horizontally
 
     static void unplacev(char[][] grid,int r,int c,boolean[] usedplace){
 
@@ -78,7 +78,7 @@ public class crossword{
         }
     }
 
-    // place the wholw word on vertically and horizontally
+    // place the whole word on vertically and horizontally
 
     static boolean[] placev(char[][] grid,int r,int c,String word){
 

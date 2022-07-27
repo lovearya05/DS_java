@@ -9,9 +9,11 @@ public class noOfSubArrSumK {
     static void result(int[] arr,int tar){
         int count=0;
         int cus=0;
+
         HashMap<Integer,Integer> hm = new HashMap<>();
         for(int i:arr){
             cus+=i;
+            
             if(cus==tar){
                 count++;
             }
