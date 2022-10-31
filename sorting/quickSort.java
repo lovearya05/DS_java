@@ -1,42 +1,35 @@
+import java.util.Arrays;
 public class quickSort {
     public static void main(String[] args) {
-        int[] arr = {2,4,2,1,7,4,9,3};
-
+        int[] arr = {5,8,6,3,2};
         quickSort(arr,0,arr.length-1);
-
-        for(int i=0;i<arr.length;i++){
-            System.out.print(arr[i]+", ");
-        }
+        System.out.println(Arrays.toString(arr));
     }
-
-    static void quickSort(int[] arr,int st,int ed){
-        if(st<ed){
-
-            int pt = partition(arr,st, ed);
-            quickSort(arr, st, pt-1);
-            quickSort(arr, pt+1,ed);
-        }
+    static void quickSort(int arr[], int low, int high)
+    {
+        if(low>=high) return;
+        int pi = partition(arr,low,high);
+        
+        quickSort(arr,low,pi-1);
+        quickSort(arr,pi+1,high);
     }
-
-    static int partition(int[] arr,int st,int ed){
-        int pivot = arr[ed];
-
-        int idx=st-1;
-        for(int i=st;i<=ed-1;i++){
-            if(arr[i]<pivot){
-                idx++;
-                swap(arr,i,idx);
+    static int partition(int arr[], int low, int high)
+    {
+        int i=low, pivot = arr[high];
+        int j = low;
+        while(i<=high){
+            if(arr[i]>pivot){
+                i++;
+            }else{
+                swap(arr,i,j);
+                j++;i++;
             }
         }
-        swap(arr,idx+1,ed);
-        
-        return idx+1;
+        return j-1;
     }
-
-    static void swap(int[] arr,int a,int b){
-        int temp=arr[a];
-        arr[a] = arr[b];
-        arr[b] = temp;
+    static void swap(int[] arr,int i,int j){
+        int tem = arr[i];
+        arr[i] = arr[j];
+        arr[j] = tem;
     }
-
 }

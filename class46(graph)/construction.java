@@ -42,7 +42,7 @@ public class construction {
 
     static void ques(){
         
-        // displayGraph();
+        displayGraph();
         
         // System.out.println("---------------------------");
         
@@ -76,7 +76,7 @@ public class construction {
 
         // masterGcc();
 
-        bfs(1);
+        // bfs(1);
 
     }
 
@@ -140,8 +140,7 @@ public class construction {
     }
 
     static ArrayList<Integer> gcc(int sc,boolean[] visited){
-        
-        
+               
         visited[sc] = true;
 
         ArrayList<Integer> ans =new ArrayList<>();
@@ -231,7 +230,9 @@ public class construction {
 
             if(!visited[ed.v]){
                 // System.out.println(flag=flag);
-                flag=flag || findCycle(ed.v,cv,visited);
+                flag  =  flag || findCycle(ed.v,cv,visited); // agr ek bar bi true return hua to flag ki value true 
+                                                            // ho jayegi or next time flag ki value me true hoga to next 
+                                                            // statement check nahi hogi.
             }
         }
         // visited[cv]=false;
