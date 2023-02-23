@@ -5,8 +5,7 @@ public class dialpad{
     public static void main(String[] args){
         
         System.out.print(kpc("234"));
-
-        
+   
     }
     static ArrayList<String>kpc(String str){
         if(str.length()==0){

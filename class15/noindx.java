@@ -5,10 +5,10 @@ public class noindx{
         int arr[]={1,2,3,2};
         int idx=0;
         int temp=5;
-        max_occ obj=new max_occ(arr,idx+1,temp);
-        int brr[]=obj.createArray();
-        //System.out.print(max_occ(arr,idx,temp));
-        display(brr);
+        // max_occ obj=new max_occ(arr,idx+1,temp);
+        // int brr[]=obj.createArray();
+        System.out.print(max_occ(arr,idx,temp));
+        // display(brr);
     }
     public static int max_occ(int[] arr,int idx,int temp){
         if(idx==arr.length)return 0;

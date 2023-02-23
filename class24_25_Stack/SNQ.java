@@ -177,7 +177,7 @@ public class SNQ {
 
 
     public static void main(String[] args){
-        // System.out.println(dupicateBa("((a+((b+c))+d))"));
+        System.out.println(dupicateBa("((a+((b+c))+d))"));
         // int[] arr={6,2,5,4,5,1,6};
         // System.out.println(findMaxArea(arr));
         // System.out.println(Arrays.toString(ngeLeftToRightIdx(arr)));

@@ -9,11 +9,11 @@ public class permu_comb{
     static void ques(){
         int box=15;
         int q=4;
-        // boolean[] visited=new boolean[box];
-        // int count=permutation(box,q,1,visited,"");
+        boolean[] visited=new boolean[box];
+        int count=permutation(box,q,1,visited,"");
         // int count=Combination(box,q,1,1,visited,"");
-        boolean[] visitedqueen=new boolean[box+1];
-        int count=nqueen(box,q,1,0,visitedqueen,"");
+        // boolean[] visitedqueen=new boolean[box+1];
+        // int count=nqueen(box,q,1,0,visitedqueen,"");
 
         System.out.println(count);
 

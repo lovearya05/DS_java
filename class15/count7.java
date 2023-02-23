@@ -9,7 +9,7 @@ public class count7{
 public static int sumDigits(int n) {
     if(n==0) return 0;
     int i=0;
-    if(n%10==8) i++;
+    if(n%10==7) i++;
     i=i+sumDigits(n/10);
     return i;
 }

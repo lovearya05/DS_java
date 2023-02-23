@@ -10,23 +10,23 @@ static class Node{
         }
 }
 static void addFirst(int data){
-        if(head==null){
-            head = new Node(data);
-        }else{
-            Node node=new Node(data);
-            node.next=head;
-            head=node;
-        }
+    if(head==null){
+        head = new Node(data);
+    }else{
+        Node node=new Node(data);
+        node.next=head;
+        head=node;
+    }
     }
 static void disp(Node iter){
-        if(iter==null){
-            System.out.println("out of bound");
-        }
-        while(iter!=null){
-            System.out.println(iter.data);
-            iter=iter.next;
-        }
+    if(iter==null){
+        System.out.println("out of bound");
     }
+    while(iter!=null){
+        System.out.println(iter.data);
+        iter=iter.next;
+    }
+}
 static int getSize(Node headtemp){
 
         Node temp=headtemp;
@@ -38,7 +38,7 @@ static int getSize(Node headtemp){
         }
 
         return count;
-    }    
+}    
 static void Reverse(){ 
     Node prev=null;
     Node Next=head;
@@ -186,8 +186,8 @@ static void findcycle(){
         addFirst(40);
         // addFirst(40);
         addFirst(30);
-        // addFirst(20);
-        // addFirst(20);
+        addFirst(20);
+        addFirst(20);
         addFirst(20);
         addFirst(10);
         // addFirst(10);

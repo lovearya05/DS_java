@@ -2,7 +2,7 @@
 public class bunnies{
     public static void main(String[] args)
     {
-       int bunnies=2;
+       int bunnies=5;
        System.out.print(bunnyEars(bunnies));
     }  
     public static int bunnyEars(int bunnies) {

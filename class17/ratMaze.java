@@ -29,19 +29,19 @@ public class ratMaze{
 
         //left
         if(issafe(sr,sc-1,dr,dc,maze) && !visited[sr][sc-1]){
-            Path(sr,sc-1,dr,dc,ans+"L",maze,visited);
+            Path(sr,sc-1,dr,dc,ans+"L ",maze,visited);
         }
         //down
         if(issafe(sr+1,sc,dr,dc,maze) && !visited[sr+1][sc]){
-            Path(sr+1,sc,dr,dc,ans+"D",maze,visited);
+            Path(sr+1,sc,dr,dc,ans+"D ",maze,visited);
         }
         //right
         if(issafe(sr,sc+1,dr,dc,maze) && !visited[sr][sc+1]){
-            Path(sr,sc+1,dr,dc,ans+"R",maze,visited);
+            Path(sr,sc+1,dr,dc,ans+"R ",maze,visited);
         }
         //up
         if(issafe(sr-1,sc,dr,dc,maze) && !visited[sr-1][sc]){
-            Path(sr-1,sc,dr,dc,ans+"U",maze,visited);
+            Path(sr-1,sc,dr,dc,ans+"U ",maze,visited);
         }
 
         visited[sr][sc]=false;

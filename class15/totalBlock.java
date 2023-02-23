@@ -11,12 +11,13 @@ triangle(2) → 3
 public class totalBlock{
     public static void main(String[] args)
     {
-        int rows=2;
+        int rows=3;
         System.out.print(triangle(rows));
     }
 public static int triangle(int rows){
     if(rows==0)return 0;
-  triangle(rows-1);
-  return((rows*rows+rows)/2);
+//   triangle(rows-1);
+//   return((rows*rows+rows)/2);
+    return triangle(rows-1) + rows;
 }
 }
